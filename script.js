@@ -50,7 +50,7 @@ app
 
   $scope.print = function() {
     $scope.show_content = !$scope.show_content; //invert the value of show_content
-    ga('send', 'event', 'Videos', 'play', 'Fall Campaign');
+    ga('send', 'event', 'Button', 'press', 'Print Clicked');
     ParseSvc.printClicked($scope.printedText);
   }
 }])

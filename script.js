@@ -84,6 +84,7 @@ app
   }
   $scope.login = function () {
     ParseSvc.login($scope.user, loginCallback)
+    ga('set', $scope.user, USER_ID);
   }
 
 }])

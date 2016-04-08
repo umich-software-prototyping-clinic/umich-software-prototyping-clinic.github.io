@@ -83,8 +83,7 @@ app
     $rootScope.username = ParseSvc.getUsername();
   }
   $scope.login = function () {
-    ParseSvc.login($scope.user, loginCallback)
-    ga('set', $scope.user, USER_ID);
+    ParseSvc.login($scope.user, loginCallback);
   }
 
 }])
@@ -155,6 +154,7 @@ app
           console.log(user.get('username'));
           // Do stuff after successful login.
           alert('Logged in as ' + user.get('username'));
+          ga('set', 'userId', user.get('username'));
           successCallback();
         },
         error: function(user, error) {

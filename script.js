@@ -154,7 +154,6 @@ app
           console.log(user.get('username'));
           // Do stuff after successful login.
           alert('Logged in as ' + user.get('username'));
-          ga('set', 'userId', user.get('username'));
           ga('send', 'event', user.get('username'), 'login', 'login');
           successCallback();
         },

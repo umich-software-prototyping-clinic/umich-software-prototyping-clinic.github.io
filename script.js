@@ -154,7 +154,7 @@ app
           console.log(user.get('username'));
           // Do stuff after successful login.
           alert('Logged in as ' + user.get('username'));
-          ga('set', 'userId', {{user.get('username')}}); // Set the user ID using signed-in user_id.
+          ga('set', 'userId', user.get('username')); // Set the user ID using signed-in user_id.
           ga('send', 'event', user.get('username'), 'login', 'login');
           successCallback();
         },

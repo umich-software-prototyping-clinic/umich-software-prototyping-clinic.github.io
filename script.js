@@ -52,7 +52,7 @@ app
     sentName = "Guest";
     if($scope.isUser())
     {
-      sentName = $scope.userName;
+      sentName = $scope.username;
     }  
     $scope.show_content = !$scope.show_content; //invert the value of show_content
     ga('send', 'event', $scope.printedText, sentName, 'Print Clicked');

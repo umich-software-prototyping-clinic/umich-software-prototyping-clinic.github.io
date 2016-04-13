@@ -48,12 +48,12 @@ app
   $scope.show_content = false; //this variable is true or false and tells us whether it should be displaying text
   $scope.printedText = ""; //by default the printedText is empty so nothing will be shown
   var sentName = "Guest";
-  alert($scope.isUser());
-  if($scope.isUser())
-  {
-    sentName = $scope.userName;
-  }
     $scope.print = function() {
+    sentName = "Guest";
+    if($scope.isUser())
+    {
+      sentName = $scope.userName;
+    }  
     $scope.show_content = !$scope.show_content; //invert the value of show_content
     ga('send', 'event', $scope.printedText, sentName, 'Print Clicked');
     ParseSvc.printClicked($scope.printedText);

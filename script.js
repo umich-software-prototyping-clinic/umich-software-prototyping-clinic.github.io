@@ -50,7 +50,7 @@ app
 
   $scope.print = function() {
     $scope.show_content = !$scope.show_content; //invert the value of show_content
-    ga('send', 'event', $scope.printedText, $scope.username, 'Print Clicked');
+    ga('send', 'event', $scope.printedText, 'press', 'Print Clicked');
     ParseSvc.printClicked($scope.printedText);
   }
 }])
@@ -154,7 +154,7 @@ app
           console.log(user.get('username'));
           // Do stuff after successful login.
           alert('Logged in as ' + user.get('username'));
-          ga('set', 'userId', user.get('username')); // Set the user ID using signed-in user_id.
+          ga('set', 'dimension1', user.get('username'));
           ga('send', 'event', user.get('username'), 'login', 'login');
           successCallback();
         },

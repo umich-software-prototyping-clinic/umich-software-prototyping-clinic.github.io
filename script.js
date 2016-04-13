@@ -141,6 +141,7 @@ app
   var user = Parse.User.current();
   if (user) {
     isRegistered = true;
+    ga('set', 'userId', {{Parse.User.current().id}}); // Set the user ID using signed-in user_id.
     // do stuff with the user
   } else {
     isRegistered = false;
@@ -159,8 +160,7 @@ app
           console.log(user.get('username'));
           // Do stuff after successful login.
           alert('Logged in as ' + user.get('username'));
-          ga('set', 'dimension1', user.get('username'));
-          ga('send', 'event', user.get('username'), 'login', 'login');
+          ga('set', 'userId', {{Parse.User.current().id}}); // Set the user ID using signed-in user_id.
           successCallback();
         },
         error: function(user, error) {
